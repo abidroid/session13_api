@@ -54,13 +54,13 @@ class _SinglePostGetScreenState extends State<SinglePostGetScreen> {
         future: getPostFromApi(),
         builder: (context, snapshot){
           if( snapshot.hasData){
-            PostModel postModel = snapshot.data as PostModel;
+            PostModel postModel = snapshot.data!;
 
             return Column(
               children: [
                 Text('User ID ${postModel.userId}'),
                 Text('ID ${postModel.id}'),
-                Text(postModel.title!),
+                Text(postModel.title!, style: TextStyle(fontSize: 40),),
                 Divider(),
                 Text(postModel.body!),
               ],
@@ -69,7 +69,7 @@ class _SinglePostGetScreenState extends State<SinglePostGetScreen> {
             return const Center(child: Text('Something went wrong'),);
 
           }else{
-            return const Center(child: SpinKitWave(color: Colors.blue),);
+            return const Center(child: SpinKitPouringHourGlass(color: Colors.blue),);
           }
         },
       ),

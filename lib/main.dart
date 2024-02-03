@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:session13_api/screens/post_list_screen.dart';
 import 'package:session13_api/screens/single_post_get_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SinglePostGetScreen(),
+      home: const PostListScreen(),
     );
   }
 }
